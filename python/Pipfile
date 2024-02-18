@@ -1,0 +1,30 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[scripts]
+# Override `python` in this env to include `src` in the path.  This allows e.g.
+# `python -c "from question_result import QuestionResult"` to work
+python = "env PYTHONPATH=src python"
+test = "env PYTHONPATH=src pytest"
+fmt = "bash -c 'pipenv run fmt:black; pipenv run fmt:isort'"
+"fmt:black" = "black src tests"
+"fmt:isort" = "isort --src=src src tests"
+"fmt-check" = "bash -c 'pipenv run fmt-check:black && pipenv run fmt-check:isort'"
+"fmt-check:black" = "black --check src tests"
+"fmt-check:isort" = "isort --check --profile black --src=src src tests"
+
+[packages]
+pandas = "*"
+
+[dev-packages]
+pytest = "*"
+black = "*"
+isort = "<6"
+
+[requires]
+python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true

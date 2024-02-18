@@ -1,0 +1,11 @@
+ID,EDGE_TYPE,HEAD_ENTITY,TAIL_ENTITY
+0,InstanceOf,weak,tea
+1,InstanceOf,strong,European
+2,InstanceOf,sports drink,orange soda
+3,SubclassOf,digital piano,energy drink
+4,SubclassOf,Indian,weak
+5,SubclassOf,piano,tonic
+6,InstanceOf,ginger beer,tonic
+7,InstanceOf,lemonade,grand piano
+8,HasAttribute,digital piano,musical instrument
+9,SubclassOf,cold,grand piano
